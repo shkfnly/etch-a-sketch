@@ -1,29 +1,27 @@
 
 $(document).ready(function(){
-  $('body').append("<div class='containers row1'></div>");
-  $('body').append("<div class='containers row2'></div>");
-  $('body').append("<div class='containers row3'></div>");
-  $('body').append("<div class='containers row4'></div>");
-  
-  $('.containers').css({'width': '800px',
-                       'height': '200px'})
-  $('.row1').append("<div id='r1c1'></div>")
-  $('.row1').append("<div id='r1c2'></div>")
-  $('.row1').append("<div id='r1c3'></div>")
-  $('.row1').append("<div id='r1c4'></div>")
-  $('.row2').append("<div id='r2c1'></div>")
-  $('.row2').append("<div id='r2c2'></div>")
-  $('.row2').append("<div id='r2c3'></div>")
-  $('.row2').append("<div id='r2c4'></div>")
-  $('.row3').append("<div id='r3c1'></div>")
-  $('.row3').append("<div id='r3c2'></div>")
-  $('.row3').append("<div id='r3c3'></div>")
-  $('.row3').append("<div id='r3c4'></div>")
-  $('.row4').append("<div id='r4c1'></div>")
-  $('.row4').append("<div id='r4c2'></div>")
-  $('.row4').append("<div id='r4c3'></div>")
-  $('.row4').append("<div id='r4c4'></div>")
-  
+  //While loop including scopes to create container div rows
+  var i = 0;
+  while(++i < 5){
+    (function(i){
+        $('body').append("<div class='containers row" + i + "'></div>");
+    })(i);
+  }
+  //Double while loop containing scopes to create columns
+  $('.containers').css({'width': '800px', 'height': '200px'})
+  var j = 0;
+  while(++j < 5){
+    (function(j){
+      var k = 0;
+      while(++k < 5){
+        (function(k){
+        $('.row' + j).append("<div id='r" + j +"c" + k + "'></div>")
+      })(k);
+      }
+  })(j);
+  }
   $('div > div').addClass('colors');
+
+  
 
 });
