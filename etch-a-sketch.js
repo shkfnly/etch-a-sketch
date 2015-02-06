@@ -23,35 +23,34 @@ $(document).ready(function(){
       var k = 0;
       while(++k < columns){
         (function(k){
-        $('.row' + j).append("<div id='r" + j +"c" + k + "'></div>")
+        $('.row' + j).append("<div id='r" + j +"c" + k + "'>a</div>")
       })(k);
       }
   })(j);
   }
   $('div > div').addClass('colorsOff');
   $('div > div').css({'width': width, 'height': height})
-  $('div > div').hover(
-    function(){
-       $(this).addClass('colorsOn');
-  }, function(){
-    $(this).addClass('colorsOn2');
-  });
-  $('div > div').click(function(){
-    $('div > div').removeClass('colorsOn');
-    $('div > div').removeClass('colorsOn2')
+  // $('div > div').hover(
+  //   function(){
+  //      $(this).addClass('colorsOn');
+  // }, function(){
+  //   $(this).addClass('colorsOn2');
+  // });
+  // $('div > div').click(function(){
+  //   $('div > div').removeClass('colorsOn');
+  //   $('div > div').removeClass('colorsOn2')
 
-  })
+  // })
   $('body').append('<button>Click To Reset</button');
   $('button').css({'margin' : '0 auto'})
-  $('button').click(function(){
-    $('div > div').removeClass('colorsOn');
-    $('div > div').removeClass('colorsOn2');
-    var newsize = prompt("How large would you like grid?");
-    console.log(newsize);
-    $('body').html('')
-    grid(newsize);
-  })
+  // $('button').click(function(){
+  //   $('div > div').removeClass('colorsOn');
+  //   $('div > div').removeClass('colorsOn2');
+  //   var newsize = prompt("How large would you like grid?");
+  //   console.log(newsize);
+  //   $('body').html('')
+  //   grid(newsize);
+  // })
   };
-  grid(16);
-
+  grid(10);
 });

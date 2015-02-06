@@ -7,6 +7,9 @@
 <body>
 
 </body>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="etch-a-sketch.js"></script>
+<script type="text/javascript">d3.selectAll(".div").style("border-color", function(){
+  return "hsl(" + Math.random() * 360 + ",100%,50%)"});</script>
 </html>
